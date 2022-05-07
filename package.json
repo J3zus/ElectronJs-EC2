@@ -1,0 +1,18 @@
+{
+  "name": "ejemploxd",
+  "version": "1.0.0",
+  "description": "Aplicacion facil de hacer con electrojs",
+  "main": "Main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "j3s-Fuentes",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.0",
+    "electron-builder": "^22.10.5"
+  }
+}

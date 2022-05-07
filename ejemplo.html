@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+
+    <form >
+        <div class="DivCajas">
+            <label >Estatura(m)</label>
+            <input type="text" id="estatura"><br><br>
+
+            <label> Peso(Kg)</label>
+            <input type="text" id="peso">
+        </div>
+
+        <div class="DivResultado">
+            <br><label> Tu IMC es:</label><br><br>
+            <label id="resultado">0</label><br><br>
+        </div>
+
+        <div class="DivBotonoes">
+            <button type="button" onclick="GetData()" >Calcular</button>
+            <button type="button" onclick="ClearData()" >Limpiar</button>
+        </div>
+
+        <script>
+            //Funcion para manipular nuestros datos obtenidos del archivo.html
+            var GetData = function(){
+            
+            //Obtener nuestras variables
+            var EstaturaF = parseFloat(document.getElementById('estatura').value);
+            var PesoF = parseFloat(document.getElementById('peso').value);
+            
+            //Operaciones
+            //IMC = Peso/Estatura^2
+            var IMC = PesoF/Math.pow(EstaturaF, 2);
+
+            //Mandar al HTMl
+            document.getElementById('resultado').innerHTML = IMC.toFixed(1);
+            }
+
+            //Funcion apra limpiar datos
+            var ClearData = function(){
+            document.getElementById('estatura').value = "";
+            document.getElementById('peso').value = "";
+            document.getElementById('resultado').innerHTML = 0;
+            
+
+            //Dar focus a la caja de texto de estatura
+            document.getElementById('estatura').focus();
+            }
+        </script>
+    </form>
+    
+</body>
+</html>
